@@ -12,12 +12,14 @@ import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { PuzzleComponent } from './components/homepage/puzzle/puzzle.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomepageComponent
+    HomepageComponent,
+    PuzzleComponent
   ],
   imports: [
     BrowserModule,

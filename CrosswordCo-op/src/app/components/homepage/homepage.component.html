@@ -1,4 +1,5 @@
 <h1>Crosswords are fun and good</h1>
+<app-puzzle></app-puzzle>
 <p><br><br>Pick a crossword to play</p>
 <div class="p-grid">
     <div class="p-col-6">
@@ -14,22 +15,22 @@
 </div>
 <div *ngIf="result" style="text-align: center">
     <ng-container *ngFor='let letter of result["grid"]; index as i'>
-        <ng-container *ngIf="(i+1)%15 != 0; else elseTemplate">
+        <ng-container *ngIf="(i+1)%result['size']['cols'] != 0; else elseTemplate">
             <ng-container *ngIf="letter != '.'; else black">
-                <input type="text" pInputText placeholder={{letter}} size="1">
+                <input type="text" minlength="1" maxlength="1" pInputText placeholder={{letter}} size="1">
             </ng-container>
             <ng-template #black>
-                    <input class="black" type="text" pInputText size="1">
+                    <input class="black" type="text" disabled="true" pInputText size="1">
             </ng-template>
             
                 
         </ng-container>
         <ng-template #elseTemplate>
                 <ng-container *ngIf="letter != '.'; else black">
-                        <input type="text" pInputText placeholder={{letter}} size="1"><br>
+                        <input type="text" minlength="1" maxlength="1" pInputText placeholder={{letter}} size="1"><br>
                     </ng-container>
                     <ng-template #black>
-                            <input class="black" type="text" pInputText size="1"><br>
+                            <input class="black" type="text" disabled="true" pInputText size="1"><br>
                     </ng-template>
         </ng-template>
     </ng-container>

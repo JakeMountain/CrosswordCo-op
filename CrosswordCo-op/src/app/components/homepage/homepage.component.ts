@@ -28,6 +28,9 @@ export class HomepageComponent implements OnInit {
     return new Array(this.result['size']['rows']);
   }
 
-
+  //hey, make this whole thing into one string array "document" where the user writes text behind the scenes.
+  //then each new letter in the document triggers a 'jump' to the next index in the array. if tab is pressed,
+  //have to jump to next 'word' in the string? shit, how does that work? idk problem for another time
+  //enter or tab jumps to next word, shift+enter/tab jump back? tie each index in array to two clues
   
 }
